@@ -8,6 +8,8 @@
         <entry key="..\:/MyAndroidProjects/COVID19InfoTracker/app/src/main/res/drawable/ic_placeholder_article.xml" value="0.19791666666666666" />
         <entry key="..\:/MyAndroidProjects/COVID19InfoTracker/app/src/main/res/drawable/splash_background.xml" value="0.1984375" />
         <entry key="..\:/MyAndroidProjects/COVID19InfoTracker/app/src/main/res/layout/activity_main.xml" value="0.16094853683148336" />
+        <entry key="..\:/MyAndroidProjects/COVID19InfoTracker/app/src/main/res/layout/article_load_state_footer.xml" value="0.27853260869565216" />
+        <entry key="..\:/MyAndroidProjects/COVID19InfoTracker/app/src/main/res/layout/fragment_article_details.xml" value="0.32663316582914576" />
         <entry key="..\:/MyAndroidProjects/COVID19InfoTracker/app/src/main/res/layout/fragment_country_news.xml" value="0.178125" />
         <entry key="..\:/MyAndroidProjects/COVID19InfoTracker/app/src/main/res/layout/fragment_map.xml" value="0.3020833333333333" />
         <entry key="..\:/MyAndroidProjects/COVID19InfoTracker/app/src/main/res/layout/item_country_artical.xml" value="0.25" />

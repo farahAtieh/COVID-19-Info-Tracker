@@ -1,8 +1,8 @@
 package com.example.covid_19infotracker.presentation.news.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagingData
+import com.example.covid_19infotracker.presentation.common.SingleLiveEvent
 import com.example.covid_19infotracker.data.model.News.Article
 import com.example.covid_19infotracker.domain.usecase.GetCountryNewsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,7 +14,7 @@ import javax.inject.Inject
 class CountryNewsVM
     @Inject constructor(private val countryNewsUseCase: GetCountryNewsUseCase): ViewModel() {
 
-    var countryArticle = MutableLiveData<PagingData<Article>>()
+    var countryArticle = SingleLiveEvent<PagingData<Article>>()
 
     private val category = "health"
 

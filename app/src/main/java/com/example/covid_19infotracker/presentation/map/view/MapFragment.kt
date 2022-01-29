@@ -77,8 +77,4 @@ class MapFragment: Fragment(R.layout.fragment_map), OnMapReadyCallback {
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        mViewModel.countryCode.value = null
-    }
 }

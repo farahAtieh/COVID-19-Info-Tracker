@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.covid_19infotracker.presentation.map.view.MapFragment"
-        android:label="fragment_map"
-        tools:layout="@layout/fragment_map" >
+        android:label="Map"
+        tools:layout="@layout/fragment_map">
         <action
             android:id="@+id/action_mapFragment_to_countryNewsFragment"
             app:destination="@id/countryNewsFragment" />
@@ -17,10 +17,22 @@
     <fragment
         android:id="@+id/countryNewsFragment"
         android:name="com.example.covid_19infotracker.presentation.news.view.CountryNewsFragment"
-        android:label="fragment_country_news"
-        tools:layout="@layout/fragment_country_news" >
+        android:label="Country News"
+        tools:layout="@layout/fragment_country_news">
         <argument
             android:name="countryCode"
             app:argType="string" />
+        <action
+            android:id="@+id/action_countryNewsFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.covid_19infotracker.presentation.details.view.ArticleFragment"
+        android:label="Article Details"
+        tools:layout="@layout/fragment_article_details">
+        <argument
+            android:name="articleData"
+            app:argType="com.example.covid_19infotracker.data.model.News$Article" />
     </fragment>
 </navigation>

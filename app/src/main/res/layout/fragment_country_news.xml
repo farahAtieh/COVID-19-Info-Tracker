@@ -34,7 +34,7 @@
             android:id="@+id/tvErrorInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Results could not be loaded"
+            android:text="@string/error_info"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,13 +52,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:visibility="visible"
-            android:text="Retry" />
+            android:text="@string/retry" />
 
         <TextView
             android:id="@+id/tvEmpty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No results found"
+            android:text="@string/no_results_found"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

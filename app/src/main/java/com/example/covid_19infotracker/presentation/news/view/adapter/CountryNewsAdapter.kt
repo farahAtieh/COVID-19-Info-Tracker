@@ -11,7 +11,7 @@ import com.example.covid_19infotracker.R
 import com.example.covid_19infotracker.data.model.News
 import com.example.covid_19infotracker.databinding.ItemCountryArticleBinding
 
-class CountryNewsAdapter: PagingDataAdapter<News.Article, CountryNewsAdapter.ArticleViewHolder>(ARTICLE_COMPARATOR) {
+class CountryNewsAdapter(private val listener: OnItemClickListener): PagingDataAdapter<News.Article, CountryNewsAdapter.ArticleViewHolder>(ARTICLE_COMPARATOR) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
@@ -29,9 +29,20 @@ class CountryNewsAdapter: PagingDataAdapter<News.Article, CountryNewsAdapter.Art
     }
 
 
-    class ArticleViewHolder(private val binding: ItemCountryArticleBinding)
+    inner class ArticleViewHolder(private val binding: ItemCountryArticleBinding)
         : RecyclerView.ViewHolder(binding.root){
 
+        init {
+            binding.root.setOnClickListener{
+                val position = bindingAdapterPosition
+                if(position != RecyclerView.NO_POSITION){
+                    val item = getItem(position)
+                    if(item != null){
+                        listener.onItemClick(item)
+                    }
+                }
+            }
+        }
             fun bind(currentArticle: News.Article){
                 binding.apply {
 
@@ -47,6 +58,10 @@ class CountryNewsAdapter: PagingDataAdapter<News.Article, CountryNewsAdapter.Art
                 }
             }
         }
+
+    interface OnItemClickListener{
+        fun onItemClick(article: News.Article)
+    }
 
     companion object {
         private val ARTICLE_COMPARATOR = object : DiffUtil.ItemCallback<News.Article>(){
