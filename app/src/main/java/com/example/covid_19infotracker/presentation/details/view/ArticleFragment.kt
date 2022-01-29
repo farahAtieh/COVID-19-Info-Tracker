@@ -66,6 +66,9 @@ class ArticleFragment: Fragment(R.layout.fragment_article_details) {
                 })*/
                 .into(ivArticalLogo)
 
+            tvAuthor.isVisible = articleData.author != null
+            tvAuthorLabel.isVisible = articleData.author != null
+
             val uri = Uri.parse(articleData.url)
             val intent = Intent(Intent.ACTION_VIEW, uri)
 
