@@ -1,7 +1,6 @@
 package com.example.covid_19infotracker.domain.usecase
 
 import androidx.paging.PagingData
-import com.example.covid_19infotracker.application.AppConstants
 import com.example.covid_19infotracker.data.model.News
 import com.example.covid_19infotracker.domain.repository.CountryNewsRepository
 import dagger.hilt.android.scopes.ViewModelScoped
