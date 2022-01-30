@@ -18,5 +18,14 @@
             android:layout_height="match_parent"
             android:name="com.google.android.gms.maps.SupportMapFragment" />
 
+        <ImageView
+            android:id="@+id/ivTotalInfo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

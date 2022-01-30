@@ -10,4 +10,9 @@
     <string name="publishedat">PublishedAt:</string>
     <string name="author">Author:</string>
     <string name="read_article">Read Article..</string>
+    <string name="today_confirmed">Today Confirmed</string>
+    <string name="today_deaths">Today Deaths:</string>
+    <string name="today_open_cases">Today Open Cases:</string>
+    <string name="today_recovered">Today Recovered:</string>
+    <string name="show_articles">Show Articles…</string>
 </resources>

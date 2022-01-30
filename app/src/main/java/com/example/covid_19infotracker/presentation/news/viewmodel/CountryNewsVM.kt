@@ -1,5 +1,6 @@
 package com.example.covid_19infotracker.presentation.news.viewmodel
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagingData
 import com.example.covid_19infotracker.presentation.common.SingleLiveEvent

@@ -3,16 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/map_nav_graph"
-    app:startDestination="@id/mapFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.covid_19infotracker.presentation.map.view.MapFragment"
         android:label="Map"
         tools:layout="@layout/fragment_map">
+        <argument android:name="coronaTrackingInfo"
+            app:argType="com.example.covid_19infotracker.data.model.CoronaTrackingData" />
         <action
-            android:id="@+id/action_mapFragment_to_countryNewsFragment"
-            app:destination="@id/countryNewsFragment" />
+            android:id="@+id/action_mapFragment_to_covidInfoDialog"
+            app:destination="@id/covidInfoDialog" />
     </fragment>
     <fragment
         android:id="@+id/countryNewsFragment"
@@ -35,4 +37,25 @@
             android:name="articleData"
             app:argType="com.example.covid_19infotracker.data.model.News$Article" />
     </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.covid_19infotracker.presentation.splash.view.SplashFragment"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_mapFragment"
+            app:destination="@id/mapFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <dialog
+        android:id="@+id/covidInfoDialog"
+        android:name="com.example.covid_19infotracker.presentation.map.view.CovidInfoDialog"
+        android:label="dialog_covid_info"
+        tools:layout="@layout/dialog_covid_info" >
+        <argument android:name="country"
+            app:argType="com.example.covid_19infotracker.data.model.CovidInfoPerCountry" />
+        <action
+            android:id="@+id/action_covidInfoDialog_to_countryNewsFragment"
+            app:destination="@id/countryNewsFragment" />
+    </dialog>
 </navigation>

@@ -23,7 +23,9 @@ class MainActivity : AppCompatActivity(){
 
         navController = navHostFragment.findNavController()
 
-        val appBarConfiguration = AppBarConfiguration(navController.graph) //connect our appbar to our navigation graph
+        val appBarConfiguration = AppBarConfiguration(setOf(
+            R.id.splashFragment,
+            R.id.mapFragment)) //connect our appbar to our navigation graph
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
 

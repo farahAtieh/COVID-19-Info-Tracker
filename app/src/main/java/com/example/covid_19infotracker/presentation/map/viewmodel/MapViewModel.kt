@@ -1,5 +1,6 @@
 package com.example.covid_19infotracker.presentation.map.viewmodel
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.covid_19infotracker.presentation.common.SingleLiveEvent
 import com.example.covid_19infotracker.domain.usecase.GetCountryInfoUseCase
@@ -12,7 +13,7 @@ import javax.inject.Inject
 class MapViewModel@Inject constructor(
     private val getCountryInfoUseCase: GetCountryInfoUseCase) : ViewModel() {
 
-    var countryCode = SingleLiveEvent<String?>()
+    var countryCode = MutableLiveData<String?>()
 
     fun getCountryInfo(countryName: String){
 

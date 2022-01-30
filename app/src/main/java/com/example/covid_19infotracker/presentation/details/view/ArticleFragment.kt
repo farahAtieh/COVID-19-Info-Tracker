@@ -33,6 +33,9 @@ class ArticleFragment: Fragment(R.layout.fragment_article_details) {
 
             currentArticle = articleData
 
+            tvAuthor.isVisible = articleData.author != null
+            tvAuthorLabel.isVisible = articleData.author != null
+
             Glide.with(this@ArticleFragment)
                 .load(articleData.urlToImage)
                 .centerCrop()
@@ -66,8 +69,6 @@ class ArticleFragment: Fragment(R.layout.fragment_article_details) {
                 })*/
                 .into(ivArticalLogo)
 
-            tvAuthor.isVisible = articleData.author != null
-            tvAuthorLabel.isVisible = articleData.author != null
 
             val uri = Uri.parse(articleData.url)
             val intent = Intent(Intent.ACTION_VIEW, uri)
