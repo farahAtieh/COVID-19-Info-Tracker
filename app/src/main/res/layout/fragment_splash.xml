@@ -15,10 +15,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="COVID-19 Info Tracker"
+            android:text="@string/covid_19_info_tracker"
             android:textSize="35sp"
             android:textStyle="bold|italic"
-            android:layout_margin="10dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
             app:layout_constraintBottom_toTopOf="@+id/progress_bar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

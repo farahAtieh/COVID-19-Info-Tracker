@@ -15,4 +15,5 @@
     <string name="today_open_cases">Today Open Cases:</string>
     <string name="today_recovered">Today Recovered:</string>
     <string name="show_articles">Show Articles…</string>
+    <string name="covid_19_info_tracker">COVID-19 \nInfo \nTracker</string>
 </resources>
