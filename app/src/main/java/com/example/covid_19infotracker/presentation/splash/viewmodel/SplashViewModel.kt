@@ -8,6 +8,7 @@ import com.example.covid_19infotracker.presentation.common.SingleLiveEvent
 import com.example.covid_19infotracker.presentation.common.getDate
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
@@ -16,6 +17,7 @@ class SplashViewModel@Inject constructor(
     private val getCoronaTrackingDataByDateRangeUseCase: GetCoronaTrackingDataByDateRangeUseCase)
     : ViewModel() {
 
+    private val mCompositeDisposable = CompositeDisposable()
     var coronaTrackingData = SingleLiveEvent<CoronaTrackingData>()
 
     init {
@@ -24,7 +26,8 @@ class SplashViewModel@Inject constructor(
 
     private fun getCoronaTrackingDataByDateRange(){
 
-        getCoronaTrackingDataByDateRangeUseCase.getCoronaVirusDataByDateRange(getDate(), getDate())
+        mCompositeDisposable.add(
+            getCoronaTrackingDataByDateRangeUseCase.getCoronaVirusDataByDateRange(getDate(), getDate())
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
@@ -34,7 +37,12 @@ class SplashViewModel@Inject constructor(
                 {throwable ->
                     System.out.println()
                 }
-            )
+            ))
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        mCompositeDisposable.clear()
     }
 
 }
